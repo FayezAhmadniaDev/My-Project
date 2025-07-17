@@ -1,0 +1,212 @@
+body {
+  background-image: url("https://png.pngtree.com/background/20210715/original/pngtree-lovely-light-brown-color-block-background-picture-image_1308619.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.menu {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #0044ff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 2px 5px 10px #707070;
+  transition: transform 0.5s ease-in-out;
+}
+.menu i{
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.menu-items {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show-menu {
+  display: flex;
+  animation: scaleIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.hide-menu {
+  display: flex;
+  animation: scaleOut 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.items {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  box-shadow: 2px 5px 20px #707070;
+}
+
+.menu-items .linkedin {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-200px);
+}
+
+.menu-items .github {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg) translateY(-200px);
+}
+
+.menu-items .x {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg) translateY(-200px);
+}
+
+.menu-items .email {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(135deg) translateY(-200px);
+}
+
+.menu-items .instagram {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg) translateY(-200px);
+}
+
+.menu-items .telegram {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(225deg) translateY(-200px);
+}
+
+.menu-items .youtube {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(270deg) translateY(-200px);
+}
+
+.menu-items .support {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(315deg) translateY(-200px);
+}
+
+.linkedin:hover,
+.github:hover,
+.youtube:hover,
+.x:hover,
+.support:hover,
+.telegram:hover,
+.instagram:hover,
+.email:hover {
+  color: black;
+  background-color: #1ff8b7;
+  font-size: 34px;
+  box-shadow: 2px 5px 10px #707070, 0 0 20px #1ff8b7;
+  transition: color 0.5s, background-color 0.8s, font-size 0.5s, transform 0.3s, box-shadow 0.6s;
+}
+
+
+.linkedin{
+  background-color: #0044ff;
+  color: white;
+}
+.github{
+  background-color: #333;
+  color: white;
+}
+.x{
+  background-color: #707070;
+  color: white;
+}
+.email ,
+.youtube{
+  background-color: #f73030;
+  color: white;
+}
+.instagram{
+  background-color: #f0078f;
+  color: white;
+}
+.telegram{
+  background-color: #1fbbf8;
+  color: white;
+}
+.support{
+  background-color: gold;
+  color: white;
+}
+.github i{
+  transform: rotate(-45deg);
+}
+.support i{
+  transform: rotate(-45deg);
+}
+.email i{
+  transform: rotate(-135deg);
+}
+.instagram i{
+  transform: rotate(-180deg);
+}
+.telegram i{
+  transform: rotate(160deg);
+}
+.youtube i{
+  transform: rotate(90deg);
+}
+.x i{
+  transform: rotate(90deg);
+}
+.menu:hover{
+  background-color: #004490;
+}
+
+
+.clicked-menu{
+  transform: rotate(45deg);
+  transition: transform 0.5s;
+}
+
+.fa-times{
+  transform: rotate(45deg);
+}
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
