@@ -1,0 +1,88 @@
+body {
+    background: #0F2027; 
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    
+}
+
+.icon-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.icon-box i {
+    font-size: 50px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    transition: transform 0.5s ease;
+}
+
+.corner.top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner.top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.corner.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.icon-box:nth-child(1) i { color: #007bff; }
+.icon-box:nth-child(1) .corner { border-color: #007bff; }
+
+.icon-box:nth-child(2) i { color: #dc3545; }
+.icon-box:nth-child(2) .corner { border-color: #dc3545; }
+
+.icon-box:nth-child(3) i { color: #28a745; }
+.icon-box:nth-child(3) .corner { border-color: #28a745; }
+
+.icon-box:nth-child(4) i { color: #ffc107; }
+.icon-box:nth-child(4) .corner { border-color: #ffc107; }
+
+.icon-box:nth-child(5) i { color: #4b317c; }
+.icon-box:nth-child(5) .corner { border-color: #6f42c1; }
+
+.icon-box:hover {
+    transform: scale(1.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+}
+
+.icon-box:hover i {
+    transform: rotate(-360deg);
+}
+
+.icon-box:hover .corner {
+    transform: scale(1.2);
+}
