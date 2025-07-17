@@ -1,0 +1,110 @@
+body {
+    background: linear-gradient(to top, #0f0c29, #302b63, #24243e);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.min-bg {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 10px 25px rgba(0, 242, 254, 0.3);
+}
+
+.side-bg {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    border-radius: 0 1rem 1rem 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+.hover-bg {
+    transition: all 0.3s ease-in-out;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    padding: 0.4rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hover-bg:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+}
+
+.active {
+    background-color: #00f2fe !important;
+    border-radius: 0حط;
+}
+
+.main-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.4);
+    transition: transform 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+    cursor: pointer;
+}
+
+.slider-arrow img {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 2px #00f2fe);
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+    left: -80px;
+}
+
+.right-arrow {
+    right: -80px;
+}
+
+@media (max-width: 768px) {
+    .slider-arrow {
+        width: 48px;
+        height: 48px;
+    }
+
+    .slider-arrow img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .left-arrow {
+        left: 10px;
+    }
+
+    .right-arrow {
+        right: 10px;
+    }
+}

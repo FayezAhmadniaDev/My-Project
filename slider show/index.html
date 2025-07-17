@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Show</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="slider-container position-relative w-100">
+            <!-- Left Arrow -->
+            <div class="slider-arrow left-arrow position-absolute">
+                <img src="icon/left-arrow.png" alt="" class="img-fluid">
+            </div>
+
+            <!-- Main Image -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8 min-bg d-flex justify-content-center">
+                    <img src="img/4.png" alt="" class="main-img img-fluid">
+                </div>
+
+                <!-- Thumbnails (Only on large screens) -->
+                <div class="col-12 col-lg-2 side-bg d-none d-lg-block border-start border-1">
+                    <div class="row hover-bg justify-content-center align-items-center py-2">
+                        <img src="img/1.png" alt="" class="img-fluid py-2">
+                    </div>
+                    <div class="row hover-bg">
+                        <img src="img/5.png" alt="" class="img-fluid py-2">
+                    </div>
+                    <div class="row hover-bg">
+                        <img src="img/2.png" alt="" class="img-fluid py-2">
+                    </div>
+                    <div class="row hover-bg">
+                        <img src="img/4.png" alt="" class="img-fluid py-2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <div class="slider-arrow right-arrow position-absolute">
+                <img src="icon/right-arrow.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
