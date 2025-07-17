@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Animated Navbar whit dark mod</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+</head>
+<body class="bg-gray-100 dark:bg-dark-200 transition-colors duration-300">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="nav-container bg-white/80 dark:bg-dark-100/80 backdrop-blur-sm shadow-lg dark:shadow-gray-800/10 w-full max-w-2xl h-40 rounded-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300 px-6 mx-4">
+            <div class="flex justify-end pt-2">
+                <button id="themeToggle" class="theme-toggle w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+            </div>
+            
+            <nav class="flex items-center justify-center h-32 gap-4">
+                <a href="#" class="nav-item flex flex-col items-center justify-center w-full h-full text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                    <i class="fas fa-building nav-icon text-xl p-1"></i>
+                    <span class="text-xs sm:text-sm pt-1 font-medium">Club</span>
+                </a>
+                <a href="#" class="nav-item flex flex-col items-center justify-center w-full h-full text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                    <i class="fas fa-user nav-icon text-xl p-1"></i>
+                    <span class="text-xs sm:text-sm pt-1 font-medium">Profile</span>
+                </a>
+                <a href="#" class="nav-item active flex flex-col items-center justify-center w-full h-full text-indigo-600 dark:text-indigo-400">
+                    <i class="fas fa-home nav-icon text-xl p-1"></i>
+                    <span class="text-xs sm:text-sm pt-1 font-medium">Home</span>
+                </a>
+                <a href="#" class="nav-item flex flex-col items-center justify-center w-full h-full text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                    <i class="fas fa-chart-bar nav-icon text-xl p-1"></i>
+                    <span class="text-xs sm:text-sm pt-1 font-medium">Stats</span>
+                </a>
+                <a href="#" class="nav-item flex flex-col items-center justify-center w-full h-full text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                    <i class="fas fa-cog nav-icon text-xl p-1"></i>
+                    <span class="text-xs sm:text-sm pt-1 font-medium">Settings</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
