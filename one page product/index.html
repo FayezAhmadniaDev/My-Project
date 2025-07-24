@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>product show</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  </head>
+  <body class="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 p-6">
+    
+    <div class="flex flex-wrap gap-3 justify-center w-full">
+        
+      <div class="card bg-white/20 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden max-w-xs w-full max-h-[550px] flex flex-col">
+        <div class="flex justify-center items-center bg-white/10 backdrop-blur-sm h-52 p-6 relative" 
+        style="box-shadow: inset 0 0 40px rgb(255 255 255 / 0.15)">
+          <img src="img/8.png" alt="Versace Yellow Diamond" class="hover:scale-110 transition-all h-full object-contain w-[90%] rounded-xl drop-shadow-lg"/>
+        </div>
+      
+        <div class="p-6 flex-grow flex flex-col">
+          <h2 class="text-2xl font-extrabold text-white mb-1 drop-shadow-md" id="title">
+            Versace Yellow Diamond
+          </h2>
+          <p class="text-sm text-white/80 mb-4 leading-relaxed drop-shadow" id="less-details">
+            A radiant citrus-floral perfume for elegant women
+          </p>
+
+          <button id="toggleDetailsBtn" class="flex justify-between items-center w-full bg-yellow-400/90 hover:bg-yellow-500/90
+          transition rounded-md font-semibold text-gray-900 px-5 py-3 shadow-md shadow-yellow-500/40 focus:outline-none focus:ring-2
+            focus:ring-yellow-300">
+            More Details
+            <i class="fas fa-chevron-down text-base transition-transform duration-300" id="flash-icon"></i>
+          </button>
+
+          <div id="modalDetails" class="modal-details mt-4 px-3 py-4 bg-white/80 rounded-lg shadow-inner max-h-60 overflow-y-auto
+          text-gray-900 text-sm space-y-5 modal-details transition-all duration-300 ease-in-out opacity-0 scale-95 transform hidden">
+            <ul>
+              <li>
+                <strong>Fragrance Notes:</strong> Top - Bergamot, Lemon, Pear;
+                Heart - Freesia, Mimosa, Water Lily; Base - Amber, Musk, Guaiac
+                Wood
+              </li>
+              <li>
+                <strong>Scent Type:</strong> Fresh, Citrus, Floral
+              </li>
+              <li>
+                <strong>Suitable For:</strong> Women
+              </li>
+              <li>
+                <strong>Longevity & Sillage:</strong> Moderate to Long-lasting
+              </li>
+              <li>
+                <strong>Best Season:</strong> Spring & Summer
+              </li>
+              <li>
+                <strong>Size:</strong> 50ml
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price text-center mb-4 px-6 flex items-center justify-center gap-3 text-white drop-shadow-lg" id="price">
+          <span class="text-3xl font-extrabold text-green-400">$274</span>
+          <span class="line-through text-gray-300 text-sm">$320</span>
+          <span class="text-sm font-semibold text-red-400 bg-red-900/30 px-2 py-1 rounded-lg shadow-md">
+            15% OFF
+          </span>
+        </div>
+
+        <div class="p-6 pt-0">
+          <div id="numberOfProducts" class="flex items-center justify-center gap-4 bg-white/70 rounded-full p-2 w-48 mx-auto mb-4 hidden
+          scale-95 opacity-0 transition-all duration-300">
+            <button id="decrease" class="bg-yellow-400 text-gray-900 w-14 h-10 rounded-full hover:bg-yellow-500 shadow-md transition">
+              -
+            </button>
+            <span id="quantity" class="text-lg font-semibold w-12 text-center text-gray-900 select-none">
+              1
+            </span>
+            <button id="increase" class="bg-yellow-400 text-gray-900 w-14 h-10 rounded-full hover:bg-yellow-500 hover:scale-110 
+            transition-transform shadow-md transition">
+              +
+            </button>
+          </div>
+
+          <button id="addToCart" class="w-full flex justify-center items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition 
+          text-gray-900 font-bold py-3 rounded-md shadow-lg shadow-yellow-600/60 focus:outline-none focus:ring-4 focus:ring-yellow-300">
+            Add to Cart <i class="fas fa-cart-plus"></i>
+          </button>
+        </div>
+      </div>
+        <!-- one item -->
+      <!-- <div class="card bg-white/20 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden max-w-xs w-full max-h-[550px] flex flex-col">
+        <div class="flex justify-center items-center bg-white/10 backdrop-blur-sm h-52 p-6 relative" 
+        style="box-shadow: inset 0 0 40px rgb(255 255 255 / 0.15)">
+          <img src="img/6.png" alt="Davidoff Cool Water Pour Homme" class="hover:scale-110 transition-all h-full object-contain w-[90%] rounded-xl drop-shadow-lg"/>
+        </div>
+      
+        <div class="p-6 flex-grow flex flex-col">
+          <h2 class="text-2xl font-extrabold text-white mb-1 drop-shadow-md" id="title">
+           Davidoff Cool Water Pour Homme
+          </h2>
+          <p class="text-sm text-white/80 mb-4 leading-relaxed drop-shadow" id="less-details">
+           Davidoff Cool Water Pour Homme is a fresh, cool, and classic masculine scent
+
+          </p>
+
+          <button id="toggleDetailsBtn" class="flex justify-between items-center w-full bg-yellow-400/90 hover:bg-yellow-500/90
+          transition rounded-md font-semibold text-gray-900 px-5 py-3 shadow-md shadow-yellow-500/40 focus:outline-none focus:ring-2
+            focus:ring-yellow-300">
+            More Details
+            <i class="fas fa-chevron-down text-base transition-transform duration-300" id="flash-icon"></i>
+          </button>
+
+          <div id="modalDetails" class="modal-details mt-4 px-3 py-4 bg-white/80 rounded-lg shadow-inner max-h-60 overflow-y-auto
+          text-gray-900 text-sm space-y-5 modal-details transition-all duration-300 ease-in-out opacity-0 scale-95 transform hidden">
+            <ul>
+              <li>
+                <strong>Fragrance Notes:</strong> Top - Mint, Green Nuances, Lavender, Coriander, Rosemary; Heart - Geranium, Neroli, Jasmine, Sandalwood; Base - Cedarwood, Musk, Amber, Tobacco
+              </li>
+              <li>
+                <strong>Scent Type:</strong> Fresh, Aromatic, Aquatic
+              </li>
+              <li>
+                <strong>Suitable For:</strong> Men
+              </li>
+              <li>
+                <strong>Longevity & Sillage:</strong> Moderate to Long-lasting
+              </li>
+              <li>
+                <strong>Best Season:</strong> Spring & Summer
+              </li>
+              <li>
+                <strong>Size:</strong> 75ml
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="price text-center mb-4 px-6 flex items-center justify-center gap-3 text-white drop-shadow-lg" id="price">
+          <span class="text-3xl font-extrabold text-green-400">$103</span>
+          <span class="line-through text-gray-300 text-sm">$412</span>
+          <span class="text-sm font-semibold text-red-400 bg-red-900/30 px-2 py-1 rounded-lg shadow-md">
+            25% OFF
+          </span>
+        </div>
+
+        <div class="p-6 pt-0">
+          <div id="numberOfProducts" class="flex items-center justify-center gap-4 bg-white/70 rounded-full p-2 w-48 mx-auto mb-4 hidden
+          scale-95 opacity-0 transition-all duration-300">
+            <button id="decrease" class="bg-yellow-400 text-gray-900 w-14 h-10 rounded-full hover:bg-yellow-500 shadow-md transition">
+              -
+            </button>
+            <span id="quantity" class="text-lg font-semibold w-12 text-center text-gray-900 select-none">
+              1
+            </span>
+            <button id="increase" class="bg-yellow-400 text-gray-900 w-14 h-10 rounded-full hover:bg-yellow-500 hover:scale-110 
+            transition-transform shadow-md transition">
+              +
+            </button>
+          </div>
+
+          <button id="addToCart" class="w-full flex justify-center items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition 
+          text-gray-900 font-bold py-3 rounded-md shadow-lg shadow-yellow-600/60 focus:outline-none focus:ring-4 focus:ring-yellow-300">
+            Add to Cart <i class="fas fa-cart-plus"></i>
+          </button>
+        </div>
+      </div> -->
+      <!-- item -->
+      <!-- <div class="card bg-white/20 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden max-w-xs w-full max-h-[550px] flex flex-col">
+        <div class="flex justify-center items-center bg-white/10 backdrop-blur-sm h-52 p-6 relative" 
+        style="box-shadow: inset 0 0 40px rgb(255 255 255 / 0.15)">
+          <img src="img/7.png" alt="Chopard Wish " class="hover:scale-110 transition-all h-full object-contain w-[90%] rounded-xl drop-shadow-lg"/>
+        </div>
+      
+        <div class="p-6 flex-grow flex flex-col">
+          <h2 class="text-2xl font-extrabold text-white mb-2 drop-shadow-md" id="title">
+            Chopard Wish 
+          </h2>
+          <p class="text-sm text-white/80 mb-4 leading-relaxed drop-shadow" id="less-details">
+           Chopard Wish is a warm, sweet, and luxurious oriental vanilla fragrance with a diamond-cut bottle design.
+
+          </p>
+
+          <button id="toggleDetailsBtn" class="flex justify-between items-center w-full bg-yellow-400/90 hover:bg-yellow-500/90
+          transition rounded-md font-semibold text-gray-900 px-5 py-3 shadow-md shadow-yellow-500/40 focus:outline-none focus:ring-2
+            focus:ring-yellow-300">
+            More Details
+            <i class="fas fa-chevron-down text-base transition-transform duration-300" id="flash-icon"></i>
+          </button>
+
+          <div id="modalDetails" class="modal-details mt-4 px-3 py-4 bg-white/80 rounded-lg shadow-inner max-h-60 overflow-y-auto
+          text-gray-900 text-sm space-y-5 modal-details transition-all duration-300 ease-in-out opacity-0 scale-95 transform hidden">
+           <ul>
+              <li>
+                <strong>Fragrance Notes:</strong> Top - Jasmine, Peony, Magnolia; Heart - Honey, Orchid, Violet; Base - Amber, Cedar, Vanilla, Caramel, Tonka Bean
+              </li>
+              <li>
+                <strong>Scent Type:</strong> Oriental, Vanilla, Gourmand
+              </li>
+              <li>
+                <strong>Suitable For:</strong> Women
+              </li>
+              <li>
+                <strong>Longevity & Sillage:</strong> Moderate to Long-lasting
+              </li>
+              <li>
+                <strong>Best Season:</strong> Fall & Winter
+              </li>
+              <li>
+                <strong>Size:</strong> 30ml, 75ml, 100ml
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="price text-center mb-4 px-6 flex items-center justify-center gap-3 text-white drop-shadow-lg" id="price">
+          <span class="text-3xl font-extrabold text-green-400">$274</span>
+          <span class="line-through text-gray-300 text-sm">$320</span>
+          <span class="text-sm font-semibold text-red-400 bg-red-900/30 px-2 py-1 rounded-lg shadow-md">
+            15% OFF
+          </span>
+        </div>
+
+        <div class="p-6 pt-0">
+          <div id="numberOfProducts" class="flex items-center justify-center gap-4 bg-white/70 rounded-full p-2 w-48 mx-auto mb-4 hidden
+          scale-95 opacity-0 transition-all duration-300">
+            <button id="decrease" class="bg-yellow-400 text-gray-900 w-14 h-10 rounded-full hover:bg-yellow-500 shadow-md transition">
+              -
+            </button>
+            <span id="quantity" class="text-lg font-semibold w-12 text-center text-gray-900 select-none">
+              1
+            </span>
+            <button id="increase" class="bg-yellow-400 text-gray-900 w-14 h-10 rounded-full hover:bg-yellow-500 hover:scale-110 
+            transition-transform shadow-md transition">
+              +
+            </button>
+          </div>
+
+          <button id="addToCart" class="w-full flex justify-center items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition 
+          text-gray-900 font-bold py-3 rounded-md shadow-lg shadow-yellow-600/60 focus:outline-none focus:ring-4 focus:ring-yellow-300">
+            Add to Cart <i class="fas fa-cart-plus"></i>
+          </button>
+        </div>
+      </div> -->
+      <!-- item -->
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
