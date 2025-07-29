@@ -1,0 +1,99 @@
+.neon-border {
+  animation: neonPulse 3s ease-in-out infinite;
+  background: linear-gradient(90deg, #7f00ff, #e100ff, #7f00ff);
+  padding: 2px;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 6px #7f00ff,
+      0 0 12px #e100ff,
+      0 0 18px #7f00ff;
+  }
+  50% {
+    box-shadow:
+      0 0 12px #7f00ff,
+      0 0 24px #e100ff,
+      0 0 36px #7f00ff;
+  }
+}
+
+.neon-input-container input {
+  flex-grow: 1;
+  font-size: 1.125rem;
+  caret-color: #e100ff;
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-input-container input::placeholder {
+  color: #d8b3ff;
+  opacity: 0.8;
+}
+
+.neon-input-container input:focus {
+  box-shadow: 0 0 10px #e100ff;
+}
+
+.left {
+  border-radius: 0 100% 100% 0;
+}
+
+.right {
+  border-radius: 100% 0 0 100%;
+}
+
+.main {
+  position: relative;
+}
+
+.logo,
+.menu {
+  opacity: 0;
+  width: 0;
+  display: flex;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.logo {
+  transform: translateX(50px);
+}
+
+.menu {
+  transform: translateX(-50px);
+}
+
+.logo.show,
+.menu.show {
+  opacity: 1;
+  width: min-content;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+#dropdownMenu {
+  position: absolute;
+  bottom: 70px;
+  right: 43px;
+  width: 180px;
+  background-color: #440483;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  pointer-events: none;
+}
+
+#dropdownMenu.drop-show {
+  bottom: 50px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.center {
+  width: 70%;
+}
+
