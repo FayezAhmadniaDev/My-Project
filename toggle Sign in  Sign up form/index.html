@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>toggle Sign in / Sign up form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 flex items-center justify-center relative overflow-hidden p-6"
+  >
+    <!-- Animated blobs background -->
+    <div
+      class="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"
+    ></div>
+    <div
+      class="absolute top-20 right-0 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"
+    ></div>
+    <div
+      class="absolute -bottom-20 left-1/2 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000"
+    ></div>
+
+    <div class="w-full max-w-5xl relative z-10">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 bg-white rounded-2xl shadow-soft overflow-hidden"
+      >
+        <!-- Left: sign in -->
+        <div class="p-8 sm:p-10 relative" id="leftContainer">
+          <!-- Progress bar -->
+          <div class="h-1 w-full bg-slate-200 rounded mb-6 overflow-hidden">
+            <div
+              id="signInProgress"
+              class="h-full w-0 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-500"
+            ></div>
+          </div>
+
+          <div class="flex items-center gap-2 mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              class="w-6 h-6 text-slate-700"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M16.5 10.5V7.875a4.875 4.875 0 1 0-9.75 0V10.5m-.375 0h10.5A1.875 1.875 0 0 1 18.75 12.375v6.75A1.875 1.875 0 0 1 16.875 21h-9.75A1.875 1.875 0 0 1 5.25 19.125v-6.75A1.875 1.875 0 0 1 7.125 10.5Z"
+              />
+            </svg>
+            <h1 class="text-2xl font-semibold text-slate-800">Welcome back</h1>
+          </div>
+
+          <p class="text-slate-500 mb-8">Log in to your account to continue.</p>
+
+          <form class="space-y-4">
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >Email</label
+              >
+              <div class="relative group">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M3 8l8.2 5.467a3 3 0 0 0 3.6 0L23 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="signInEmail"
+                  type="email"
+                  name="email"
+                  novalidate
+                  placeholder="you@example.com"
+                  class="w-full pl-10 pr-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div>
+              <label
+                for="password"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >Password</label
+              >
+              <div class="relative group">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15.75 7.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM3 20.25l5.47-5.47m0 0h3.03m-3.03 0v-3.03"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="signInPassword"
+                  type="password"
+                  name="password"
+                  novalidate
+                  placeholder="••••••••"
+                  class="w-full pl-10 pr-10 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                />
+                <button
+                  type="button"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600 transition"
+                >
+                  <svg
+                    id="signInEyeIcon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.5a10.523 10.523 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 12.544 12.544M21 21l-3-3"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Options -->
+            <div class="flex items-center justify-between">
+              <label class="inline-flex items-center gap-2 select-none">
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-400"
+                />
+                <span class="text-sm text-slate-600">Remember me</span>
+              </label>
+              <a
+                href="#"
+                class="text-sm font-medium text-indigo-600 hover:underline"
+                >Forgot password?</a
+              >
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="w-full py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium hover:opacity-90 transition shadow"
+            >
+              Sign in
+            </button>
+
+            <!-- for small devoices -->
+            <button
+              type="button"
+              class="md:hidden w-full py-2 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white font-medium hover:opacity-90 transition shadow"
+              id="mobileSignUp"
+            >
+              Sign up
+            </button>
+
+            <!-- Social login -->
+            <div class="flex items-center gap-2 my-6">
+              <div class="h-px bg-slate-200 flex-1"></div>
+              <span class="text-slate-400 text-sm">or continue with</span>
+              <div class="h-px bg-slate-200 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3">
+              <button
+                type="button"
+                class="flex items-center justify-center gap-2 py-2 border border-slate-200 rounded-xl hover:bg-slate-50 transition"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                  alt="Google"
+                  class="w-5 h-5"
+                />
+                <span class="sr-only">Google</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- sign up -->
+        <div class="p-8 sm:p-10 relative hidden sign-up" id="signupContainer">
+          <!-- Progress bar -->
+          <div class="h-1 w-full bg-slate-200 rounded mb-6 overflow-hidden">
+            <div
+              id="signUpsProgress"
+              class="h-full w-0 bg-gradient-to-r from-green-500 to-teal-500 transition-all duration-500"
+            ></div>
+          </div>
+
+          <div class="flex items-center gap-2 mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              class="w-6 h-6 text-slate-700"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M16.5 10.5V7.875a4.875 4.875 0 1 0-9.75 0V10.5m-.375 0h10.5A1.875 1.875 0 0 1 18.75 12.375v6.75A1.875 1.875 0 0 1 16.875 21h-9.75A1.875 1.875 0 0 1 5.25 19.125v-6.75A1.875 1.875 0 0 1 7.125 10.5Z"
+              />
+            </svg>
+            <h1 class="text-2xl font-semibold text-slate-800">New here?</h1>
+          </div>
+
+          <p class="text-slate-500 mb-8">
+            Create your free account and join us today!
+          </p>
+
+          <form class="space-y-4">
+            <!-- Name -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >Email</label
+              >
+              <div class="relative group">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4zM6 20v-1c0-2 4-3 6-3s6 1 6 3v1H6z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="signUpName"
+                  type="text"
+                  name="fullName"
+                  novalidate
+                  placeholder="you@example.com"
+                  class="w-full pl-10 pr-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >Email</label
+              >
+              <div class="relative group">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M3 8l8.2 5.467a3 3 0 0 0 3.6 0L23 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="signUpEmail"
+                  type="email"
+                  name="emailSignUp"
+                  novalidate
+                  placeholder="you@example.com"
+                  class="w-full pl-10 pr-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                />
+              </div>
+            </div>
+            <!-- Password -->
+            <div>
+              <label
+                for="password"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >Password</label
+              >
+              <div class="relative group">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15.75 7.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM3 20.25l5.47-5.47m0 0h3.03m-3.03 0v-3.03"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="signUpPassword"
+                  type="password"
+                  name="passwordSignUp"
+                  novalidate
+                  placeholder="••••••••"
+                  class="w-full pl-10 pr-10 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                />
+                <button
+                  type="button"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600 transition"
+                >
+                  <svg
+                    id="signUpEyeIcon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.5a10.523 10.523 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 12.544 12.544M21 21l-3-3"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="w-full py-2 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white font-medium hover:opacity-90 transition shadow"
+            >
+              Sign up
+            </button>
+
+            <!-- for small devoices -->
+
+            <button
+              type="button"
+              class="md:hidden w-full py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium hover:opacity-90 transition shadow"
+              id="mobileSignIn"
+            >
+              Sign in
+            </button>
+
+            <!-- Social signup -->
+            <div class="flex items-center gap-2 my-6">
+              <div class="h-px bg-slate-200 flex-1"></div>
+              <span class="text-slate-400 text-sm">or continue with</span>
+              <div class="h-px bg-slate-200 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3">
+              <button
+                type="button"
+                class="flex items-center justify-center gap-2 py-2 border border-slate-200 rounded-xl hover:bg-slate-50 transition"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                  alt="Google"
+                  class="w-5 h-5"
+                />
+                <span class="sr-only">Google</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Friendly Sign-up Invitation -->
+        <div
+          class="relative hidden md:flex flex-col items-center justify-center bg-indigo-50 p-10 text-center right-switch"
+          id="rightContainer"
+        >
+          <h2 class="text-2xl font-bold text-slate-800 mb-4" id="labelHElem">
+            New here?
+          </h2>
+          <p class="text-slate-600 max-w-sm mb-6" id="labelPElem">
+            Create your free account and join us today. We’d love to have you on
+            board and share amazing experiences together!
+          </p>
+          <button
+            class="w-64 py-2 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white font-medium hover:bg-green-600 transition shadow"
+            id="signUp"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
