@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Orbit Fab btn</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styale.css">
+  
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center">
+
+  <div id="fab-backdrop" class="fixed inset-0 bg-pink-700 bg-opacity-30 hidden z-10"></div>
+
+  <div id="fab-root" class="relative w-64 h-64 flex items-center justify-center z-20">
+
+    <div id="fab-wrapper" class="absolute inset-0 flex items-center justify-center">
+
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="0"><i class="fa-solid fa-envelope text-sky-600 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="1"><i class="fa-solid fa-user text-rose-500 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="2"><i class="fa-solid fa-camera text-lime-600 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="3"><i class="fa-solid fa-map-location-dot text-amber-600 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="4"><i class="fa-solid fa-share-nodes text-indigo-600 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="5"><i class="fa-solid fa-heart text-pink-500 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="6"><i class="fa-solid fa-star text-yellow-500 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="7"><i class="fa-solid fa-bell text-orange-500 text-2xl"></i></button>
+      <button class="fab-item w-12 h-12 rounded-full bg-white shadow-md absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 opacity-0" data-index="8"><i class="fa-solid fa-cog text-gray-600 text-2xl"></i></button>
+
+      <div class="fab-line" data-index="0" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="1" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="2" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="3" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="4" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="5" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="6" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="7" style="width:0;height:4px;opacity:0;"></div>
+      <div class="fab-line" data-index="8" style="width:0;height:4px;opacity:0;"></div>
+
+    </div>
+
+    <button id="fab-toggle" class="z-20 w-16 h-16 rounded-full bg-gradient-to-tr from-pink-500 to-pink-400 text-white shadow-2xl flex items-center justify-center transform-gpu">
+      <i id="fab-icon" class="fa-solid fa-plus fa-lg text-3xl"></i>
+    </button>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
