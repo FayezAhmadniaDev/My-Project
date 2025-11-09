@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile Tabs - Light/Dark</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="stayle.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6 text-gray-900">
+
+<div class="w-full max-w-lg relative">
+  <!-- Tabs -->
+  <div class="flex absolute top-0 left-0 right-0 z-10">
+    <div id="tabs" role="tablist" class="flex w-full">
+      <button class="tab-btn flex-1 px-4 py-3 border-b-0 rounded-tl-md light-bg-tab-active"
+              role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">Profile</button>
+      <button class="tab-btn flex-1 px-4 py-3 border-b-0 light-bg-tab-inactive"
+              role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2">Settings</button>
+      <button class="tab-btn flex-1 px-4 py-3 border-b-0 rounded-tr-md light-bg-tab-inactive"
+              role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3">Activity</button>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div id="card" class="mt-0 rounded-lg pt-20 pb-6 px-6 shadow-lg relative overflow-hidden h-96 light-bg-card light-border card-hover">
+    <div id="panels" class="relative h-full">
+      <!-- Profile -->
+      <section id="panel-1" role="tabpanel" aria-labelledby="tab-1" class="panel panel-show">
+        <div class="flex items-center gap-4 mb-4">
+          <div id="avatar" class="icon-avatar light-border text-white">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <h3 id="profileName" class="text-lg font-bold text-white">Fayez Ahmadnia</h3>
+            <p class="text-sm text-gray-100">Front-end developer passionate about UI/UX design.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 mb-3">
+          <span class="text-gray-100 text-sm">Change Avatar:</span>
+          <input type="file" id="avatarInput" class="hidden"/>
+          <button id="avatarBtn" class="px-4 py-2 rounded-lg light-btn btn-hover">Choose File</button>
+          <span id="fileName" class="text-sm text-gray-200">No file chosen</span>
+        </div>
+        <p class="text-sm text-gray-200">Joined: Jan 2023 | Location: Bandare Abbas, IRAN</p>
+        <button id="saveProfile" class="mt-4 px-4 py-2 rounded-lg light-btn btn-hover">Save Changes</button>
+      </section>
+
+      <!-- Settings -->
+      <section id="panel-2" role="tabpanel" aria-labelledby="tab-2" class="panel panel-hidden space-y-3">
+        <h3 class="text-lg font-bold mb-2 text-white">Settings</h3>
+        <div class="flex items-center gap-2">
+          <span class="text-gray-200 text-sm">Dark Mode</span>
+          <input type="checkbox" id="darkModeToggle" class="toggle-checkbox"/>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-gray-200 text-sm">Notifications</span>
+          <input type="checkbox" id="notifToggle" checked class="toggle-checkbox"/>
+        </div>
+        <div class="flex flex-col">
+          <label for="privacySelect" class="text-gray-200 text-sm mb-1">Privacy</label>
+          <select id="privacySelect" class="light-btn rounded-lg p-1 py-2 border-none text-sm">
+            <option>Public Profile</option>
+            <option>Private Profile</option>
+            <option>Custom</option>
+          </select>
+        </div>
+        <button id="saveSettings" class="mt-4 px-4 py-2 rounded-lg light-btn btn-hover">Save Changes</button>
+      </section>
+
+      <!-- Activity -->
+      <section id="panel-3" role="tabpanel" aria-labelledby="tab-3" class="panel panel-hidden space-y-2">
+        <h3 class="text-lg font-bold mb-2 text-white">Recent Activity</h3>
+        <div class="flex items-center gap-2 mb-2">
+          <input type="checkbox" id="recent24h" class="toggle-checkbox"/>
+          <label for="recent24h" class="text-gray-200 text-sm">Show only recent 24h</label>
+        </div>
+        <ul id="activityList" class="text-gray-200 text-sm list-disc ml-5 space-y-1">
+          <li data-time="2025-11-09T08:00">Logged in 2 hours ago</li>
+          <li data-time="2025-11-08T15:00">Updated portfolio project</li>
+          <li data-time="2025-11-07T10:00">Changed profile picture</li>
+          <li data-time="2025-11-06T12:00">Commented on a post</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
